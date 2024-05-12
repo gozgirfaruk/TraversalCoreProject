@@ -1,0 +1,46 @@
+﻿@model List<Feature>
+
+<div class="best-rooms py-5">
+    <div class="container py-md-5">
+        <div class="ban-content-inf row">
+            <div class="maghny-gd-1 col-lg-6">
+                <div class="maghny-grid">
+                    <figure class="effect-lily border-radius  m-0">
+                        <img class="img-fluid" src="~/Traversal-Star/assets/images/g10.jpg" alt="" />
+                        <figcaption>
+                            <div>
+                                <h4>Almanya</h4>
+                                <p>Erken Rezervasyon</p>
+                            </div>
+
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+
+            <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="maghny-gd-1 col-6">
+                            <div class="maghny-grid">
+                                <figure class="effect-lily border-radius">
+                                    <img class="img-fluid" src="@item.BigPostDesct" alt="" />
+                                    <figcaption>
+                                        <div>
+                                            <h4>@item.BigPostName</h4>
+                                            <p>Erken Rezervasyon Fırsatı </p>
+                                        </div>
+
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

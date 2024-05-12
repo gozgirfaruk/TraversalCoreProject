@@ -3,13 +3,25 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="zxx">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>_UILayout</title>
-</head>
+@await Html.PartialAsync("/Views/_UILayoutPartial/_HeadPartial.cshtml")
+
 <body>
+    <!--header-->
+    @await Html.PartialAsync("/Views/_UILayoutPartial/_NavbarPartial.cshtml")
+    
+    
+    @RenderBody()
+    
+    @await Component.InvokeAsync("_FooterComponent")
+  
+    @await Html.PartialAsync("/Views/_UILayoutPartial/_ScriptPartial.cshtml")
 </body>
+
 </html>
