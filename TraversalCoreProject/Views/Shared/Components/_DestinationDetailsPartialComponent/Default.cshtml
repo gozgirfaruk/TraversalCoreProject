@@ -1,0 +1,23 @@
+﻿@model Destination
+
+
+<p class="alphabet mb-4">
+    <span class="big-letter">A</span>
+   @Html.DisplayFor(x=>x.Details2)
+</p>
+
+<blockquote class="blockquote my-5">
+    <div class="icon-quote"><span class="fa fa-quote-left" aria-hidden="true"></span></div>
+  @Html.DisplayFor(x=>x.Description)
+    <footer class="blockquote-footer mt-3">
+       @Html.DisplayFor(x=>x.City)
+    </footer>
+</blockquote>
+<h3 class="blog-desc-big m-0 mb-4">@Html.DisplayFor(x=>x.City) Hakkında</h3>
+<p class="mb-4">
+    <pre >
+        @Html.DisplayFor(x => x.Details1)
+    </pre>
+   
+</p>
+

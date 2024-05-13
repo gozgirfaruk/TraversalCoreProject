@@ -11,7 +11,7 @@ namespace TraversalCoreProject.ViewComponents._UILayoutPartialComponent
 
         public IViewComponentResult Invoke()
         {
-            var values = destinationMenager.GetAll();
+            var values = destinationMenager.GetAll().Take(8).ToList();
             return View(values);
         }
     }

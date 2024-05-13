@@ -1,0 +1,52 @@
+﻿@model List<ReComment>
+<div class="d-grid left-right mt-5 pb-md-5">
+    <div class="buttons-singles tags">
+        <h4>Tags :</h4>
+        <a href="#blog-tag">Travel</a>
+        <a href="#blog-tag">Culture</a>
+        <a href="#blog-tag">Hotel</a>
+        <a href="#blog-tag">Food</a>
+    </div>
+    <div class="buttons-singles">
+        <h4>Share :</h4>
+        <a href="#blog-share"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+        <a href="#blog-share"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+        <a href="#blog-share"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+        <a href="#blog-share"><span class="fa fa-pinterest-p" aria-hidden=" true"></span></a>
+    </div>
+</div>
+
+
+
+<div class="comments mt-5">
+    <h4 class="side-title ">(@ViewBag.a) Yorum Yapıldı</h4>
+    @foreach(var item in Model)
+    {
+        <div class="media mt-4">
+        <div class="img-circle">
+                <img src="https://cdn.pixabay.com/photo/2017/06/21/07/51/icon-2426371_960_720.png" class="img-fluid" alt="...">
+        </div>
+        <div class="media-body">
+
+            <ul class="time-rply mb-2">
+                <li>
+                    <a href="#URL" class="name mt-0 mb-2 d-block">@item.Name</a>
+                   @item.Date.ToString("dd.MMMM.yyyy")
+
+                </li>
+                @* <li class="reply-last">
+                    <a href="#reply" class="reply">
+                        Reply
+                    </a>
+                </li> *@
+            </ul>
+            <p>
+              @item.Content
+            </p>
+        </div>
+    </div>
+    }
+    
+    
+    
+</div>

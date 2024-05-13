@@ -23,6 +23,7 @@ namespace DataAccessLayer.Context
         public DbSet<NewsLetter> NewsLetters { get; set; }
         public DbSet<SubAbout> SubAbouts { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
-        
+        public DbSet<ReComment> ReComments { get; set; }
+
     }
 }

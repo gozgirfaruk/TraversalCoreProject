@@ -15,7 +15,9 @@ namespace TraversalCoreProject.Controllers
 
         public IActionResult Details(int id)
         {
-            var values = _destMenager.GetbyId(id);  
+            var values = _destMenager.GetbyId(id);
+            //ViewBag.c = values.CoverImage1.ToString();
+            ViewBag.ID = id;
             return View(values);
 
         }

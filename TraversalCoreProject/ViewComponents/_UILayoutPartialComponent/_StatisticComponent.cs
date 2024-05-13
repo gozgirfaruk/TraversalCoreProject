@@ -10,6 +10,7 @@ namespace TraversalCoreProject.ViewComponents._UILayoutPartialComponent
             using var context = new TreversalContext();
             ViewBag.a = context.Destinations.Count();
             ViewBag.b =context.Guides.Count();
+            ViewBag.d=context.Testimonials.Count();
             ViewBag.c = "150";
             return View();
         }
