@@ -9,7 +9,7 @@ namespace TraversalCoreProject.ViewComponents._UILayoutPartialComponent
         ReCommentMenager recommentMenager = new ReCommentMenager(new EfReCommentDal(new DataAccessLayer.Context.TreversalContext()));
         public IViewComponentResult Invoke(int id)
         {
-            var values = recommentMenager.TGetListByFilter(id);
+            var values = recommentMenager.TGetListByFilter(id).Where(x=>x.Status==true).ToList();
             ViewBag.a = values.Count();
             return View(values);
         }
