@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +32,11 @@ namespace BusinessLayer.Concrete
         public void TDelete(Guide entity)
         {
             _guideDal.Delete(entity);
+        }
+
+        public List<Guide> TGetListByFilter(Expression<Func<Guide, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public void TInsert(Guide entity)

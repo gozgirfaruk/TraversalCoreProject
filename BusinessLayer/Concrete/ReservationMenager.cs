@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,9 +29,19 @@ namespace BusinessLayer.Concrete
            return _reservationDal.GetById(id);
         }
 
+        public List<Reservation> GetbyListAppUser(int id)
+        {
+            return _reservationDal.GetListByFilter(x=>x.AppUserID == id && x.Status=="Onay Bekliyor");
+        }
+
         public void TDelete(Reservation entity)
         {
             _reservationDal.Delete(entity);
+        }
+
+        public List<Reservation> TGetListByFilter(Expression<Func<Reservation, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public void TInsert(Reservation entity)

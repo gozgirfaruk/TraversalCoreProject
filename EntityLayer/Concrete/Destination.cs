@@ -20,6 +20,7 @@ namespace EntityLayer.Concrete
         public string CoverImage2 { get; set; }
         public string Details1 { get; set; }
         public string Details2 { get; set; }
+        public List<Reservation> Reservations { get; set; }
         public List<ReComment> ReComments { get; set; }
 
     }

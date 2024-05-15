@@ -15,6 +15,13 @@ builder.Services.AddMvc(config =>
     config.Filters.Add(new AuthorizeFilter(policy));
 });
 builder.Services.AddMvc();
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromDays(1);
+    options.AccessDeniedPath = "/ErrorPage/Index/";
+    options.LoginPath = "/Login/Index";
+});
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 

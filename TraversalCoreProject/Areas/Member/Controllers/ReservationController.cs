@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -11,6 +12,29 @@ namespace TraversalCoreProject.Areas.Member.Controllers
     {
         DestinationMenager _destination = new DestinationMenager(new EfDestinationDal());
         ReservationMenager _reservation = new ReservationMenager(new EfReservationDal());
+        private readonly UserManager<AppUser> _userMenager;
+
+        public ReservationController(UserManager<AppUser> userMenager)
+        {
+            _userMenager = userMenager;
+        }
+
+        public IActionResult MyReservation()
+        {
+            return View();
+        }
+
+        public IActionResult OldestReservation()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> MyApprovalReservation()
+        {
+            var values = await _userMenager.FindByNameAsync(User.Identity.Name);
+            var valueList= _reservation.GetbyListAppUser(values.Id);
+            return View(valueList);
+        }
 
 
 
@@ -32,9 +56,9 @@ namespace TraversalCoreProject.Areas.Member.Controllers
         public IActionResult NewReservation(Reservation reservation)
         {
             reservation.AppUserID = 3;
-            reservation.Status = "Onaylanmadı";
+            reservation.Status = "Onay Bekliyor";
             _reservation.TInsert(reservation);
-            return RedirectToAction("Index","Profile"); 
+            return RedirectToAction("Index", "Profile");
         }
     }
 }

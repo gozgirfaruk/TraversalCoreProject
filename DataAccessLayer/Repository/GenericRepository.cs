@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,8 +12,6 @@ namespace DataAccessLayer.Repository
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-      
-
         public void Delete(T t)
         {
             using var _context= new TreversalContext();
@@ -30,6 +29,13 @@ namespace DataAccessLayer.Repository
         {
             using var _context = new TreversalContext();
             var values = _context.Set<T>().Find(id);
+            return values;
+        }
+
+        public List<T> GetListByFilter(Expression<Func<T, bool>> filter)
+        {
+            using var _context = new TreversalContext();
+            var values = _context.Set<T>().Where(filter).ToList();
             return values;
         }
 

@@ -9,6 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IReCommentService : IGenericService<ReComment>
     {
-        List<ReComment> TGetListByFilter(int id);
+        List<ReComment> GetCommentByFilter(int id);
     }
 }

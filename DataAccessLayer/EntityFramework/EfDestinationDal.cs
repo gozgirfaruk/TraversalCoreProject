@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Context;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
 using System;
@@ -11,5 +12,6 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfDestinationDal : GenericRepository<Destination>,IDestinationDal
     {
+      
     }
 }

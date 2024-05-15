@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,9 +34,14 @@ namespace BusinessLayer.Concrete
             _recommentDal.Delete(entity);
         }
 
-        public List<ReComment> TGetListByFilter(int id)
+        public List<ReComment> GetCommentByFilter(int id)
         {
             return _recommentDal.GetListByFilter(x => x.DestinationID == id);
+        }
+
+        public List<ReComment> TGetListByFilter(Expression<Func<ReComment, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public void TInsert(ReComment entity)
