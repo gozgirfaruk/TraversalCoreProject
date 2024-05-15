@@ -4,6 +4,7 @@ using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(TreversalContext))]
-    partial class TreversalContextModelSnapshot : ModelSnapshot
+    [Migration("20240515093059_mig_removeReservation")]
+    partial class mig_removeReservation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -388,43 +390,6 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("ReComments");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Reservation", b =>
-                {
-                    b.Property<int>("ReservationID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReservationID"), 1L, 1);
-
-                    b.Property<int>("AppUserID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Destination")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PersonCount")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ReservationID");
-
-                    b.HasIndex("AppUserID");
-
-                    b.ToTable("Reservations");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.SubAbout", b =>
                 {
                     b.Property<int>("SubAboutID")
@@ -588,17 +553,6 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Destination");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Reservation", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.AppUser", "AppUser")
-                        .WithMany("Reservation")
-                        .HasForeignKey("AppUserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.AppRole", null)
@@ -648,11 +602,6 @@ namespace DataAccessLayer.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.AppUser", b =>
-                {
-                    b.Navigation("Reservation");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Destination", b =>

@@ -12,6 +12,7 @@ namespace EntityLayer.Concrete
         public string ImageUrl { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+       public List<Reservation> Reservation { get; set; }
 
     }
 }

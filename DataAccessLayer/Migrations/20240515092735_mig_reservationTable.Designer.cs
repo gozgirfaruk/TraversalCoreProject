@@ -4,6 +4,7 @@ using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(TreversalContext))]
-    partial class TreversalContextModelSnapshot : ModelSnapshot
+    [Migration("20240515092735_mig_reservationTable")]
+    partial class mig_reservationTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -591,7 +593,7 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Reservation", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.AppUser", "AppUser")
-                        .WithMany("Reservation")
+                        .WithMany("Reservations")
                         .HasForeignKey("AppUserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -652,7 +654,7 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.AppUser", b =>
                 {
-                    b.Navigation("Reservation");
+                    b.Navigation("Reservations");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Destination", b =>

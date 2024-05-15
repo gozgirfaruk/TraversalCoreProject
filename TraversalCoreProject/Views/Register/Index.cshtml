@@ -1,4 +1,6 @@
-﻿@{
+﻿@model UserRegisterViewModel
+
+@{
     Layout = null;
 }
 
@@ -41,27 +43,41 @@
                                     <p class="mb-0">Hemen Sisteme Kayıt Olarak Size Özel Kampanya ve Tatillerden Haberdar Olabilirsiniz.</p>
                                 </div>
                                 <div class="card-body">
-                                    <form role="form">
-                                      
+                                    <form role="form" method="post">
                                         <div class="mb-3">
-                                            <input type="email" class="form-control" placeholder="E-Posta Adresi" aria-label="Email" aria-describedby="email-addon">
+                                            <input type="text" asp-for="UserName" class="form-control" placeholder="Kullanıcı Adı" required>
                                         </div>
                                         <div class="mb-3">
-                                            <input type="email" class="form-control" placeholder="Şifre" aria-label="Password" aria-describedby="password-addon">
+                                            <input type="text" asp-for="FirstName" class="form-control" placeholder="Adınız" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" asp-for="LastName" class="form-control" placeholder="Soyadınız" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="email" asp-for="Mail" class="form-control" placeholder="E-Posta Adresi" aria-label="Email" aria-describedby="email-addon" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" asp-for="ImageUrl" class="form-control" placeholder="Varsayılan Görsel" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="password" class="form-control" asp-for="Password" placeholder="Şifre" aria-label="Password" aria-describedby="password-addon" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="password" class="form-control" asp-for="ConfirmedPassword" placeholder="Şifre Tekrar" aria-label="Password" aria-describedby="password-addon" required>
                                         </div>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
-                                            <label class="form-check-label" for="rememberMe">Beni Hatırla</label>
+                                            <label class="form-check-label" for="rememberMe">Kullanıcı Sözleşmesini Kabul Ediyorum</label>
                                         </div>
                                         <div class="text-center">
-                                            <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Giriş Yap</button>
+                                            <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Kayıt Ol</button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <p class="mb-4 text-sm mx-auto">
-                                        Hala Kayıt Olmadınız Mı ?
-                                        <a href="javascript:;" class="text-info text-gradient font-weight-bold">Hemen Kaydol</a>
+                                        Zaten Hesabım Var !
+                                        <a href="/Login/Index/" class="text-info text-gradient font-weight-bold">Giriş Yap</a>
                                     </p>
                                 </div>
                             </div>
