@@ -1,8 +1,74 @@
-﻿
+﻿@model List<Reservation>
 @{
     ViewData["Title"] = "MyReservation";
     Layout = "~/Views/Shared/_MemberUILayout.cshtml";
+    int total = Model.Count();
 }
 
-<h1>Aktif Rezervasyonlarım</h1>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header pb-0">
+                <h6>Onaylanan Rezervasyonlarım</h6>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                    @if (total > 0)
+                    {
+                        <table class="table align-items-center mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Lokasyon</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Hareket Tarihi</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rezerv Koltuk</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durumu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+
+
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    <img src="@item.Destination.CoverImage1" class="avatar avatar-sm me-3" alt="user1">
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">@item.Destination.City</h6>
+                                                    @* <p class="text-xs text-secondary mb-0">john@creative-tim.com</p> *@
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">@item.Date.ToString("dd MMMM yyyy")</p>
+                                            @*  <p class="text-xs text-secondary mb-0">Organization</p> *@
+                                        </td>
+
+                                        <td class="align-middle text-center">
+                                            <span class="text-secondary text-xs font-weight-bold">@item.PersonCount Koltuk</span>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="badge badge-sm bg-gradient-success">@item.Status</span>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    }
+
+                    else
+                    {
+                        <h5>Herhangi bir rezervasyon bilginiz bulunmamaktadır. Sizlerde ayrıcalıklı fırsatlarla tatil yapmak için hemen yeni bir rezervasyon oluşturun.</h5>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

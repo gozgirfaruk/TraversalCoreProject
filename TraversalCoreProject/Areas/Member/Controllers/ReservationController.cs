@@ -18,21 +18,26 @@ namespace TraversalCoreProject.Areas.Member.Controllers
         {
             _userMenager = userMenager;
         }
-
-        public IActionResult MyReservation()
+        // Onaylanmış Rezervasyonlar Listesi
+        public async Task<IActionResult> MyReservation()
         {
-            return View();
+            var value = await _userMenager.FindByNameAsync(User.Identity.Name);
+            var valueList = _reservation.TListWitReservationAccepted(value.Id);
+            return View(valueList);
+        }
+        // Onaylanmayan Rezervasyonlar Listesi
+        public async Task<IActionResult> OldestReservation()
+        {
+            var values = await _userMenager.FindByNameAsync(User.Identity.Name);
+            var valueList = _reservation.TListWitReservationRejected(values.Id);
+            return View(valueList);
         }
 
-        public IActionResult OldestReservation()
-        {
-            return View();
-        }
-
+        // Onay Bekleyen Rezervasyonlar Listesi
         public async Task<IActionResult> MyApprovalReservation()
         {
             var values = await _userMenager.FindByNameAsync(User.Identity.Name);
-            var valueList= _reservation.GetbyListAppUser(values.Id);
+            var valueList = _reservation.TListWithReservationAproval(values.Id);
             return View(valueList);
         }
 

@@ -49,6 +49,21 @@ namespace BusinessLayer.Concrete
             _reservationDal.Insert(entity);
         }
 
+        public List<Reservation> TListWithReservationAproval(int id)
+        {
+            return _reservationDal.ListWithReservationAproval(id);
+        }
+
+        public List<Reservation> TListWitReservationAccepted(int id)
+        {
+            return _reservationDal.ListWitReservationAccepted(id); 
+        }
+
+        public List<Reservation> TListWitReservationRejected(int id)
+        {
+            return _reservationDal.ListWitReservationRejected(id);
+        }
+
         public void TUpdate(Reservation entity)
         {
             _reservationDal.Update(entity);

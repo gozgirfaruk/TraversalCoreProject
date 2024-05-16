@@ -9,7 +9,7 @@
 
 <form method="post">
     <label>Lokasyon</label>
-    @* @Html.DropDownListFor(x=>x.Destination,(List<SelectListItem>)ViewBag.v , new {@class ="form-control"}) *@
+    @Html.DropDownListFor(x=>x.Destination,(List<SelectListItem>)ViewBag.v , new {@class ="form-control"})
         <br />
         <label>Yetişkin Sayısı</label>
         <input type="number" asp-for="PersonCount" class="form-control"/>

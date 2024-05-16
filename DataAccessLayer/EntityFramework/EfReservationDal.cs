@@ -15,17 +15,23 @@ namespace DataAccessLayer.EntityFramework
     {
         public List<Reservation> ListWithReservationAproval(int id)
         {
-            throw new NotImplementedException();
+            using var _context =  new TreversalContext();
+            var values = _context.Reservations.Include(x=>x.Destination).Where(y=>y.AppUserID == id &&  y.Status=="Onay Bekliyor").ToList();
+            return values;
         }
 
         public List<Reservation> ListWitReservationAccepted(int id)
         {
-            throw new NotImplementedException();
+            using var _context = new TreversalContext();
+            var values = _context.Reservations.Include(x => x.Destination).Where(y => y.AppUserID == id && y.Status == "Onaylandı").ToList();
+            return values;
         }
 
         public List<Reservation> ListWitReservationRejected(int id)
         {
-            throw new NotImplementedException();
+            using var _context = new TreversalContext();
+            var values = _context.Reservations.Include(x => x.Destination).Where(y => y.AppUserID == id && y.Status == "Onaylanmadı").ToList();
+            return values;
         }
     }
 }
