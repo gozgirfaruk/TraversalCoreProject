@@ -1,0 +1,53 @@
+﻿@model List<ReComment>
+@{
+    ViewData["Title"] = "CommentList";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Gelen Yorumlar</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Tarih</th>
+                    <th>Yorum Atılan Şehir</th>
+                    <th>Yorum Durumu</th>
+                    <th>Yorumu İçeriği</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.ReCommentID</td>
+                    <td>@item.Name</td>
+                    <td>
+                        @item.Date.ToString("dd.MM.yyyy")
+                    </td>
+                    <td><img src="@item.Destination.ImageUrl" style="border-radius:5px; height:50px; width:50px;"/> @item.Destination.City</td>
+                        @{
+                            if (item.Status == true)
+                            {
+                                <td><span class="badge bg-label-primary me-1">Yayımda</span></td>
+                            }
+                            else
+                            {
+                                <td><span class="badge bg-label-danger me-1">Kaldırıldı</span></td>
+                            }
+                        }
+                        <td>
+                            <a href="/Destination/Details/@item.DestinationID" class="fa-light fa-eye fa-xl">Gör</a>
+                        </td>
+                        <td><a href="/Admin/Comment/Delete/@item.ReCommentID" class="fa-light fa-trash-xmark fa-xl"></a></td>
+                    
+                </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>

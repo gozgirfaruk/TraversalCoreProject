@@ -1,0 +1,46 @@
+﻿@model List<Destination>
+@{
+    ViewData["Title"] = "DestinationList";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <h5 class="card-header">Aktif Turlar</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Şehir</th>
+                    <th>Fiyat</th>
+                    <th>Kapasite</th>
+                    <th>Sitede Gör</th>
+                    <th>İncele</th>
+                    <th>Güncelle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>@count</td>
+                        <td><img src="@item.ImageUrl" style="height:40px; width: 40px; border-radius:5px; " /> <strong>@item.City</strong></td>
+                        <td>@item.Price ₺</td>
+                        <td>@item.Capacity Koltuk </td>
+                        <td><a href="/Destination/Index/" class="btn btn-outline-info">Sitede Gör</a></td>
+                        <td><a href="/Destination/Details/@item.DestinationID" class="btn btn-outline-secondary btn-rounded">İncele</a></td>
+                        <td><a href="/Admin/Destination/UpdateDestination/@item.DestinationID" class="btn btn-outline-warning btn-rounded">Güncelle</a></td>
+                        <td><a href="/Admin/Destination/DeleteDestination/@item.DestinationID" class="btn btn-outline-danger btn-rounded">Sil</a></td>
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <br />
+        <a href="/Admin/Destination/NewDestination" class="btn btn-outline-primary">Yeni Rota Oluştur</a>
+    </div>
+</div>

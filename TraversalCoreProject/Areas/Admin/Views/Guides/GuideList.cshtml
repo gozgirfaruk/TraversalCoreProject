@@ -1,0 +1,55 @@
+﻿@model List<Guide>
+@{
+    ViewData["Title"] = "GuideList";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Rehberlerimiz</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Rehber</th>
+                    <th>Yabancı Dil</th>
+                    <th>İletişim</th>
+                    <th>Durum</th>
+                    <th>Güncelle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                   
+                    <tr>
+                        <td>@item.GuideID</td>
+                        <td><img src="@item.Image" style="height:40px; width: 40px; border-radius:5px; " /> <strong>@item.Name</strong></td>
+                        <td>@item.Description</td>
+                        <td><a href="#"><i class="fa-light fa-circle-envelope fa-2xl"></i></a></td>
+                       <td>
+                            @{
+                                if (item.Status == true)
+                                {
+                                    <a href="#"><i class="fa-light fa-shield-check fa-2xl"></i></a>
+                                    
+                                }
+                                else
+                                {
+                                    <a href="#"><i class="fa-light fa-shield-xmark fa-2xl"></i></a>
+                                    
+                                }
+                            }
+                       </td>
+                        <td><a href="/Admin/Guides/UpdateGuide/@item.GuideID" class="btn btn-outline-warning btn-rounded">Güncelle</a></td>
+                        <td><a href="/Admin/Guides/DeleteGuide/@item.GuideID" class="btn btn-outline-danger btn-rounded">Sil</a></td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+

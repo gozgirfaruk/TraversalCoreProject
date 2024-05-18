@@ -10,5 +10,6 @@ namespace BusinessLayer.Abstract
     public interface IReCommentService : IGenericService<ReComment>
     {
         List<ReComment> GetCommentByFilter(int id);
+        List<ReComment> GetListWithCity();
     }
 }

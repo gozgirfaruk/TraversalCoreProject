@@ -53,5 +53,10 @@ namespace BusinessLayer.Concrete
         {
             _recommentDal.Update(entity);
         }
+
+        public List<ReComment> GetListWithCity()
+        {
+            return _recommentDal.GetListWithCity();
+        }
     }
 }

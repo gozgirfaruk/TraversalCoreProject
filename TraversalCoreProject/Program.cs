@@ -1,5 +1,6 @@
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using BusinessLayer.Container;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
 using DataAccessLayer.EntityFramework;
@@ -19,6 +20,7 @@ builder.Services.AddMvc(config =>
     config.Filters.Add(new AuthorizeFilter(policy));
 });
 
+builder.Services.ContainerDependencies();
 
 builder.Services.AddMvc();
 builder.Services.ConfigureApplicationCookie(options =>
@@ -46,16 +48,15 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
       name: "areas",
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
     );
+    app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 });
 
 app.Run();

@@ -11,5 +11,7 @@ namespace DataAccessLayer.Abstract
     public interface IReCommentDal : IGenericDal<ReComment>
     {
         List<ReComment> GetListByFilter(Expression<Func<ReComment, bool>> filter);
+
+        List<ReComment> GetListWithCity();
     }   
 }

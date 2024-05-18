@@ -1,0 +1,101 @@
+﻿@model Destination
+@{
+    ViewData["Title"] = "NewDestination";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Yeni Rota Oluştur</h5>
+
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-plane-departure"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="City" placeholder="Gidiş Noktası" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-hourglass-clock"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="DayNight" placeholder="Tatil Gün Sayısı" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-money-bill-wave"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="Price" placeholder="Kişi Başı Ücret" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-seat-airline"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="Capacity" placeholder="Toplam Koltuk Sayısı" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-image"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Şehir Kapak Fotografı" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-image"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="CoverImage1" placeholder="Şehir İlan Fotografı" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-image"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="CoverImage2" placeholder="Şehir Afiş Fotografı" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-subtitles"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="Description" placeholder="Açıklama Tanıtım" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-subtitles"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="Details1" placeholder="Şehir Hakkında" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="fa-light fa-subtitles"></i>
+                            </span>
+                            <input type="text" class="form-control" asp-for="Details2" placeholder="Şehir Detay" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
