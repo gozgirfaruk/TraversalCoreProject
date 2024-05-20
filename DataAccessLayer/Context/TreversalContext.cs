@@ -16,6 +16,7 @@ namespace DataAccessLayer.Context
             optionsBuilder.UseSqlServer("Server=DESKTOP-MT6QAH6\\SQLEXPRESS;initial catalog=TreversalDB; integrated security=true");
         }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<Announcement> Announcements { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Feature> Features { get; set; }

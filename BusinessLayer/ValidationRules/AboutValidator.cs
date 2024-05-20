@@ -13,7 +13,6 @@ namespace BusinessLayer.ValidationRules
         public AboutValidator()
         {
             RuleFor(x => x.Description).NotEmpty().WithMessage("Açıklama alanı boş geçilemez").MinimumLength(50).WithMessage("Aıklama alanı 50 karakterden az olamaz.");
-        
         }
 
     }

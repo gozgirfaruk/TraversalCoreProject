@@ -1,12 +1,18 @@
+using AutoMapper;
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using BusinessLayer.Container;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
 using DataAccessLayer.EntityFramework;
+using DTOLayer.DTOs.Announcement;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using TraversalCoreProject.Mapping.AutoMapperProfile;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,8 +26,10 @@ builder.Services.AddMvc(config =>
     config.Filters.Add(new AuthorizeFilter(policy));
 });
 
+builder.Services.MapperProfile();
 builder.Services.ContainerDependencies();
-
+builder.Services.CustomerValidator();
+builder.Services.AddControllersWithViews();
 builder.Services.AddMvc();
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -30,7 +38,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/ErrorPage/Index/";
     options.LoginPath = "/Login/Index";
 });
-builder.Services.AddControllersWithViews();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

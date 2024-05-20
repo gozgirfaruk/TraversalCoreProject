@@ -1,7 +1,11 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
+using DTOLayer.DTOs.Announcement;
+using EntityLayer.Concrete;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -23,6 +27,13 @@ namespace BusinessLayer.Container
 
             services.AddScoped<IReCommentService,ReCommentMenager>();
             services.AddScoped<IReCommentDal,EfReCommentDal>();
+
+            services.AddScoped<IAppUserService,AppUserMenager>();
+            services.AddScoped<IAppUserDal,EfAppUserDal>();
+
+            services.AddScoped<IAnnouncementService,AnnouncementMenager>();
+            services.AddScoped<IAnnouncementDal,EfAnnouncementDal>();
         }
+       
     }
 }
