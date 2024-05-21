@@ -18,6 +18,7 @@ namespace DataAccessLayer.Context
         public DbSet<About> Abouts { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<FeatureSmall> FeatureSmalls { get; set; }

@@ -1,18 +1,8 @@
-using AutoMapper;
-using BusinessLayer.Abstract;
-using BusinessLayer.Concrete;
 using BusinessLayer.Container;
-using BusinessLayer.ValidationRules;
-using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
-using DataAccessLayer.EntityFramework;
-using DTOLayer.DTOs.Announcement;
 using EntityLayer.Concrete;
-using FluentValidation;
-using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using TraversalCoreProject.Mapping.AutoMapperProfile;
 
 var builder = WebApplication.CreateBuilder(args);
 

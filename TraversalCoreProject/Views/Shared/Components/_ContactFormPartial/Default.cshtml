@@ -1,0 +1,23 @@
+﻿
+@model Contact
+
+
+<form method="post" asp-action="AddForm" asp-controller="Contact" class="signin-form">
+    <div class="input-grids">
+        <div class="form-group">
+            <input type="text" asp-for="Name" id="w3lName" placeholder="Ad Soyad*" class="contact-input" />
+        </div>
+        <div class="form-group">
+            <input type="email" asp-for="Mail" id="w3lSender" placeholder="E-Posta*" class="contact-input" required />
+        </div>
+        <div class="form-group">
+            <input type="text" asp-for="Subject" id="w3lSubect" placeholder="Konu*" class="contact-input" />
+        </div>
+    </div>
+    <div class="form-group">
+        <textarea asp-for="Body" id="w3lMessage" placeholder="Mesajınızı lütfen buraya giriniz.*" required=""></textarea>
+    </div>
+    <div class="text-right">
+        <button class="btn btn-style btn-primary">Mesajı Gönder</button>
+    </div>
+</form>

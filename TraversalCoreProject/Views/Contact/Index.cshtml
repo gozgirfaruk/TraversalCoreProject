@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+
+
+<body>
+
+    <!-- about breadcrumb -->
+    <section class="w3l-about-breadcrumb text-left">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+            <div class="container py-2">
+                <h2 class="title">İletişim Paneli</h2>
+                <ul class="breadcrumbs-custom-path mt-2">
+                    <li><a href="#url">Form</a></li>
+                    <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> İletişim </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //about breadcrumb -->
+    <!-- contact-form -->
+    <section class="w3l-contact" id="contact">
+        <div class="contact-infubd py-5">
+            <div class="container py-lg-3">
+                <div class="contact-grids row">
+
+                    <div class="col-lg-6 contact-left">
+                        @await Component.InvokeAsync("_ContactAddressPartial")
+                    </div>
+                    <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
+                        @await Component.InvokeAsync("_ContactFormPartial")
+                    </div>
+
+
+
+                </div>
+                <div class="map mt-5 pt-md-5">
+                    <h5>Map</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5354.341094375341!2d37.35754359591544!3d37.06438714135874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1531e13fcaae3333%3A0xaea378c98547280!2sSankoPark%20AVM!5e0!3m2!1str!2str!4v1716221600988!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+    </section>
+
+</body>
+

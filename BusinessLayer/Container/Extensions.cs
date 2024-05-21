@@ -33,6 +33,12 @@ namespace BusinessLayer.Container
 
             services.AddScoped<IAnnouncementService,AnnouncementMenager>();
             services.AddScoped<IAnnouncementDal,EfAnnouncementDal>();
+
+            services.AddScoped<IAddressService,AddressMenager>();
+            services.AddScoped<IAddressDal,EfAddressDal>();
+
+            services.AddScoped<IContactDal,EfContactDal>();
+            services.AddScoped<IContactService,ContactMenager>();
         }
        
     }
