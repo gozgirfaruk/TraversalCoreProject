@@ -12,5 +12,7 @@ namespace DataAccessLayer.Abstract
         List<Reservation> ListWithReservationAproval(int id);
         List<Reservation> ListWitReservationAccepted(int id);
         List<Reservation> ListWitReservationRejected(int id);
+        List<Reservation> ListAllAproval();
+
     }
 }

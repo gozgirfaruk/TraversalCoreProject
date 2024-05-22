@@ -9,5 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface ITestimonialService : IGenericService<Testimonial>
     {
+        void TStatusChangeTrue(int id);
+        void TStatusChangeFalse(int id);
     }
 }

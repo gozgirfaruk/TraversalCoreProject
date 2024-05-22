@@ -1,0 +1,33 @@
+﻿@model List<Reservation>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Aktif Rezervasyonlar</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>Seyehat Kodu</th>
+                    <th>Hareket Tarihi</th>
+                    <th>Rota</th>
+                    <th>Rezerv Koltuk</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ReservationID</td>
+                        <td>@item.Date.ToString("dd.MM.yyyy")</td>
+                        <td><img src="@item.Destination.CoverImage1" style="height:50px; width:50px; border-radius:5px;" />@item.Destination.City</td>
+                        <td>@item.PersonCount</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

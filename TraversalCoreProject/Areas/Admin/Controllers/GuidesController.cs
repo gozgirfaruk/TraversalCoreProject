@@ -6,7 +6,7 @@ using TraversalCoreProject.Models;
 namespace TraversalCoreProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Route("Admin/Guides")]
+    [Route("Admin/Guides/")]
     public class GuidesController : Controller
     {
         private readonly IGuideService _guideService;

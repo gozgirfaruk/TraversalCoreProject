@@ -44,6 +44,16 @@ namespace BusinessLayer.Concrete
             _testimonialDal.Insert(entity);
         }
 
+        public void TStatusChangeFalse(int id)
+        {
+            _testimonialDal.StatusChangeFalse(id);
+        }
+
+        public void TStatusChangeTrue(int id)
+        {
+           _testimonialDal.StatusChangeTrue(id);
+        }
+
         public void TUpdate(Testimonial entity)
         {
             _testimonialDal.Update(entity); 

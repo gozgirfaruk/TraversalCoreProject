@@ -43,6 +43,12 @@ namespace BusinessLayer.Container
 
             services.AddScoped<INewsLetterService,NewsLetterMenager>();
             services.AddScoped<INewsLetterDal,EfNewsLetterDal>();
+
+            services.AddScoped<IReservationService,ReservationMenager>();
+            services.AddScoped<IReservationDal,EfReservationDal>();
+
+            services.AddScoped<ITestimonialService,TestimonialMenager>();
+            services.AddScoped<ITestimonialDal,EfTestimonialDal>(); 
         }
        
     }

@@ -1,0 +1,48 @@
+﻿@model List<Testimonial>
+@{
+    ViewData["Title"] = "TestList";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Referanslar Listesi</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Profil</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Yayınla/Kaldır</th>
+                    <th>Güncelle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                    <th>@item.TestimonialID</th>
+                    <td><img src="@item.Image" style="height:50px; width:50px; border-radius:50px;"/></td>
+                    <td>@item.Name</td>
+                    <td>
+                            @{
+                                if(item.Status==true)
+                                {
+                                    <a href="/Admin/Testimonial/StatusChanegerToFalse/@item.TestimonialID" class="fa-light fa-hexagon-check fa-2xl"></a>
+                                }
+                                else
+                                {
+                                    <a href="/Admin/Testimonial/StatusChangerToTrue/@item.TestimonialID" class="fa-light fa-hexagon-xmark fa-2xl"></a>
+                                }
+                            }
+                    </td>
+                    <td><a href="/Admin/Testimonial/UpdateTest/@item.TestimonialID" class="btn btn-outline-dark btn-rounded">Güncelle</a></td>
+                    <td><a href="#" class="btn btn-outline-danger btn-rounded">Sil</a></td>
+                </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>
