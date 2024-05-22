@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,6 +40,9 @@ namespace BusinessLayer.Container
 
             services.AddScoped<IContactDal,EfContactDal>();
             services.AddScoped<IContactService,ContactMenager>();
+
+            services.AddScoped<INewsLetterService,NewsLetterMenager>();
+            services.AddScoped<INewsLetterDal,EfNewsLetterDal>();
         }
        
     }

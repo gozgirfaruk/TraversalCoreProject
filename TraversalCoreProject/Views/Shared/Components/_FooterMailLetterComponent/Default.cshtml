@@ -1,0 +1,13 @@
+﻿@model NewsLetter
+
+<div class="col-lg-6 col-md-12 column pl-lg-5 column4 mt-lg-0 mt-5">
+    <h3>Mail Bülteni </h3>
+    <div class="end-column">
+        <h4>Kampanyalardan Haberdar Olmak İçin Abone Ol !</h4>
+        <form method="post" asp-action="Index" asp-controller="NewsLetterSenderController" class="subscribe">
+            <input type="email" asp-for="Mail" placeholder="E-Posta Adresiniz" required="">
+            <button type="submit">Abone Ol</button>
+        </form>
+        <p>Size özel kampanyalardan haberdar olmak için mail adresiniz ile bültene abone olabilirsiniz.</p>
+    </div>
+</div>

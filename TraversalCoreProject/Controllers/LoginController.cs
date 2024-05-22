@@ -40,5 +40,12 @@ namespace TraversalCoreProject.Controllers
             }
             return View();  
         }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signinMenager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
+
+        }
     }
 }
