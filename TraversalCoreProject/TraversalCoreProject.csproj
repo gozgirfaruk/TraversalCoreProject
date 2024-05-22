@@ -381,7 +381,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Member\Data\" />
     <Folder Include="wwwroot\userimage\" />
     <Folder Include="wwwroot\SoftUI-DashBoard\.git\objects\info\" />

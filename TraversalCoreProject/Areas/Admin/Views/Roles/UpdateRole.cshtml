@@ -1,0 +1,33 @@
+﻿@model UpdateRoleViewModel
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/Shared/_AdminUILayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Basic with Icons</h5>
+                <small class="text-muted float-end">Merged input group</small>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-action="UpdateRole">
+                    <input type="hidden" asp-for="RoleID"/>
+                    <div class="mb-3">
+                        <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text">
+                                <i class="bx bx-user"></i>
+                            </span>
+                            <input type="text"
+                                   class="form-control"
+                                asp-for="RoleName" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
