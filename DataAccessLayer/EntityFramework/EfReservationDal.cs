@@ -16,7 +16,7 @@ namespace DataAccessLayer.EntityFramework
         public List<Reservation> ListAllAproval()
         {
             using var _context = new TreversalContext();
-            var values = _context.Reservations.Include(x=>x.Destination).Where(y=>y.Status=="Onaylandı").ToList();
+            var values = _context.Reservations.Include(x=>x.Destination).Where(y => y.Status == "Onaylandı").ToList();
             return values;
         }
 
