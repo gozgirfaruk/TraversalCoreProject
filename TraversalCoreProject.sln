@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{57A2EFEA-B6B3-41B1-AB05-CA24FBBBFB21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOLayer", "DTOLayer\DTOLayer.csproj", "{396F1818-9848-46C2-96FC-59061C4E2E81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTOLayer", "DTOLayer\DTOLayer.csproj", "{396F1818-9848-46C2-96FC-59061C4E2E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRApi", "SignalRApi\SignalRApi.csproj", "{EE731DA1-F347-437A-960C-B14268BC22D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRConsume", "SignalRConsume\SignalRConsume.csproj", "{2DDB0552-B503-4396-9A34-23F83A3CEF8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRApiForSql", "SignalRApiForSql\SignalRApiForSql.csproj", "{46D44690-AF0D-48AB-90B2-01EB78F725BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{396F1818-9848-46C2-96FC-59061C4E2E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{396F1818-9848-46C2-96FC-59061C4E2E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{396F1818-9848-46C2-96FC-59061C4E2E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE731DA1-F347-437A-960C-B14268BC22D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE731DA1-F347-437A-960C-B14268BC22D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE731DA1-F347-437A-960C-B14268BC22D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE731DA1-F347-437A-960C-B14268BC22D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDB0552-B503-4396-9A34-23F83A3CEF8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDB0552-B503-4396-9A34-23F83A3CEF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDB0552-B503-4396-9A34-23F83A3CEF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDB0552-B503-4396-9A34-23F83A3CEF8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D44690-AF0D-48AB-90B2-01EB78F725BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D44690-AF0D-48AB-90B2-01EB78F725BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D44690-AF0D-48AB-90B2-01EB78F725BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D44690-AF0D-48AB-90B2-01EB78F725BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
