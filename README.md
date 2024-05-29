@@ -21,19 +21,19 @@
 ---
 
 ## 💻 Proje İçerisinde Kullanılan Yapılar
-    * Asp.Net Core 6.0
-    * Entity Framework (ORM)
-    * n-Tier Architecture
-    * MsSql
-    * Identity
-    * Repository Design Pattern
-    * Fluent Validation
-    * SeriLog
-    * Raporlama
-    * Ajax
-    * Auto Mapper
-    * Api
-    * SignalR
+     Asp.Net Core 6.0
+     Entity Framework (ORM)
+     n-Tier Architecture
+     MsSql
+     Identity
+     Repository Design Pattern
+     Fluent Validation
+     SeriLog
+     Raporlama
+     Ajax
+     Auto Mapper
+     Api
+     SignalR
     
 
 # 🖼️ Proje Ait Görseller
