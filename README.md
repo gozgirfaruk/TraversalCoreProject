@@ -1,3 +1,41 @@
+# 🔭 Treversal Core Project
+* Bir tur şirketine ait gerçekleştirebiceğiniz tüm işlemleri gerçekleştirebilirsiniz.
+* Proje 3 ana panel üzerine kurulmuştur.
+
+### 🔐 Admin Paneli
+ - Gezi tur şirketinizin tüm operasyonlarını tek bir yerden kolayca yönetmenizi sağlar.
+   * Tur programlarını ve lokasyonları kolayca düzenleyebilir.
+   * Müşteri rezervasyonlarını takip edebilir, yönetebilir.
+   * Tur işlemleri hakkında rapor oluşturabilir.
+   * Müşteri geri bildirimlerini ve değerlendirmelerini inceleyebilir.
+
+
+### ✍️ Kullanıcı Paneli
+ - Tur rezervasyonlarını ve tatil planlamalarını kolayca yapabilmelerini sağlayan paneldir.
+    * Kolay ve hızlı arama ve rezervasyon imkanı sağlar,
+    * Geçmiş ve gelecek rezervasyonlarını, rezervasyon taleplerini görüntüleyebilir,
+    * Kişisel bilgilerini ve sistem tercihlerini düzenleyebilir,
+
+###  👁️‍🗨️ Vitrin Paneli
+ - Sistem üzerindeki tur ve rezervasyonlar hakkında bilgi almak,yönetim ile iletişime geçmek için kullanılan bir paneldir.
+---
+
+## 💻 Proje İçerisinde Kullanılan Yapılar
+    * Asp.Net Core 6.0
+    * Entity Framework (ORM)
+    * n-Tier Architecture
+    * MsSql
+    * Identity
+    * Repository Design Pattern
+    * Fluent Validation
+    * SeriLog
+    * Raporlama
+    * Ajax
+    * Auto Mapper
+    * Api
+    * SignalR
+    
+
 # 🖼️ Proje Ait Görseller
 
 * Vitrin
