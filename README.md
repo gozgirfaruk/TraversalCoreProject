@@ -1,5 +1,5 @@
 # 🔭 Treversal Core Project
-* Bu proje, bir tur acentesine ait web sitesi geliştirmeyi kapsamaktadır. Site, kullanıcıların çeşitli tur paketlerini inceleyip rezervasyon yapabilmelerine olanak tanımaktadır. Amacımız, kullanıcılara kolay ve hızlı bir şekilde seyahat planlarını yapabilecekleri, detaylı bilgi alabilecekleri ve güvenli bir rezervasyon süreci sunmaktır. Ayrıca, site üzerinden kullanıcılar tur programları, fiyatlar ve özel kampanyalar hakkında bilgi edinebilirler. Bu proje, tur acentesinin dijital dönüşümünü destekleyerek müşteri memnuniyetini artırmayı hedeflemektedir.
+* Bu proje, bir tur acentesine ait web sitesi geliştirmeyi kapsamaktadır. Site, kullanıcıların çeşitli tur paketlerini inceleyip rezervasyon yapabilmelerine olanak tanımaktadır. Amacımız, kullanıcılara kolay ve hızlı bir şekilde seyahat planlarını yapabilecekleri, detaylı bilgi alabilecekleri ve güvenli bir rezervasyon süreci sunmaktır. Ayrıca, site üzerinden kullanıcılar tur programları, fiyatlar ve özel kampanyalar hakkında bilgi edinebilirler. 
 * Proje 3 ana panel üzerine kurulmuştur.
 
 ### 🔐 Admin Paneli
